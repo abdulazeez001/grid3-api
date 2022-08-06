@@ -6,13 +6,10 @@
   "scripts": {
     "jsdoc": "echo 'Building JSDocs...' && npx rimraf docs/jsdoc && jsdoc src -r -c jsdoc-config.json -d docs/jsdoc",
     "restdoc": "echo 'Building REST Docs...' && apidoc -i src/interfaces/http/router/ -o docs/restdocs",
-    "readmedoc": "echo 'Building Readme Docs...' && node src/scripts/readme/generateReadme.js ",
     "serve:docs": "docsify serve docs/template-doc",
-    "install:hadolint": "chmod +x ./install-hadolint.sh && ./install-hadolint.sh",
     "build": "babel src --delete-dir-on-start  -d dist",
     "build:docs": "yarn jsdoc && yarn restdoc && yarn readmedoc",
     "lint:staged": "lint-staged",
-    "seed:todos": "NODE_ENV=development yarn build && node dist/seeds/seedTodo.js",
     "start:dev": "NODE_ENV=development babel-node src/start.js",
     "start:dev:rs": "nodemon",
     "lint": "TIMING=1 node_modules/.bin/eslint --ext .js src/",
