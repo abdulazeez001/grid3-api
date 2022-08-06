@@ -34,7 +34,7 @@ const config = {
     env: "ELASTICSEARCH_INDEX_NAME",
     sensitive: false,
   },
-  
+
   isTls: {
     doc: "Is Elasticsearch TLS",
     format: Boolean,
