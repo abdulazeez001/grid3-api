@@ -1,0 +1,23 @@
+{
+  "name": "grid3-api",
+  "version": "1.0.0",
+  "description": "Wanted to create this for a while now, I think I should just start. Will update this later",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulazeez001/grid3-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdulazeez001/grid3-api/issues"
+  },
+  "homepage": "https://github.com/abdulazeez001/grid3-api#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
