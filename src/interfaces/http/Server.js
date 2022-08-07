@@ -3,7 +3,7 @@ import http from "http";
 import path from "path";
 
 class Server {
-  constructor({ config, logger }) {
+  constructor({ config, router, logger }) {
     this.config = config;
     this.logger = logger;
     this.express = express();
@@ -13,7 +13,7 @@ class Server {
       express.static(path.resolve(__dirname, "../../../docs/restdocs"))
     );
 
-    // this.express.use(router);
+    this.express.use(router);
     this.express.app = http.createServer(this.express);
   }
 
