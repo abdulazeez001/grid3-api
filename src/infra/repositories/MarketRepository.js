@@ -1,4 +1,6 @@
+/* eslint-disable no-param-reassign */
 import GeocoderClient from "infra/services/GeocoderClient";
+import paginateData from "infra/libs/PaginateData";
 import BaseRepository from "./BaseRepository";
 
 class MarketRepository extends BaseRepository {
@@ -9,6 +11,9 @@ class MarketRepository extends BaseRepository {
   }
 
   async getMarket(query) {
+    const { limit, page } = query;
+    delete query.page;
+    delete query.limit;
     const data = this.find(query);
     const result = [];
     if (data) {
@@ -24,7 +29,7 @@ class MarketRepository extends BaseRepository {
         delete result[i].geometry_name;
       }
     }
-    return result;
+    return paginateData(result, limit, page);
   }
 }
 

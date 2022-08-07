@@ -9,6 +9,12 @@ class MarketController extends BaseController {
 
   async getMarketByQuery(req, res) {
     // const data = this.marketRepository.find(req.query);
+    if (!req.query.limit) {
+      req.query.limit = 10;
+    }
+    if (!req.query.page) {
+      req.query.page = 1;
+    }
     const data = await this.marketRepository.getMarket(req.query);
     this.responseManager
       .getResponseHandler(res)
