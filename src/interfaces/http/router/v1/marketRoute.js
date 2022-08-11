@@ -285,5 +285,14 @@ const api = makeInvoker(MarketController);
     "links": []
 }
 */
+router.route("/:marketId").get(catchErrors(api("getMarketById")));
 router.route("/").get(catchErrors(api("getMarketByQuery")));
+
+/**
+ *  @api {get} v1/:marketId Gets market by Id
+    @apiName Get Market details by Id
+    @apiGroup Market
+    @apiSuccessExample {json} Success-Response
+ */
+
 module.exports = router;

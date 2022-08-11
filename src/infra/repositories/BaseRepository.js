@@ -60,8 +60,8 @@ class BaseRepository {
    * @memberof BaseRepository
    */
   findById(documentId) {
-    const data = this.Collection;
-    const results = data.filter((feature) => {
+    let results = JSON.parse(JSON.stringify(this.Collection));
+    results = results.filter((feature) => {
       return feature.id === documentId;
     });
     return results;

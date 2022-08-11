@@ -20,6 +20,15 @@ class MarketController extends BaseController {
       .getResponseHandler(res)
       .onSuccess(data, "Results retrieved", StatusCodes.OK);
   }
+
+  async getMarketById(req, res) {
+    const { marketId } = req.params;
+    console.log(marketId);
+    const data = await this.marketRepository.findById(marketId);
+    this.responseManager
+      .getResponseHandler(res)
+      .onSuccess(data, "Results retrieved", StatusCodes.OK);
+  }
 }
 
 export default MarketController;
